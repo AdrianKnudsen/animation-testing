@@ -32,7 +32,7 @@ body {
   width: 30px;
   height: 30px;
   background: transparent;
-  animation: animate 25s linear infinite;
+  animation: animate 15s linear infinite, flickerAnimation 3s infinite;
   border-radius: 100%;
   border: 4px solid transparent;
   cursor: pointer;
@@ -108,43 +108,74 @@ body {
   animation-delay: 0s;
 }
 
+@keyframes flickerAnimation {
+  0% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0.1;
+  }
+  20% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0.5;
+  }
+  40% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  60% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.5;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes animate {
   0% {
     transform: translateY(0) rotate(0deg);
     height: 0px;
     width: 0px;
-    opacity: 0;
   }
 
   25% {
     transform: translateY(200px) rotate(0deg);
     height: 100px;
     width: 100px;
-    opacity: 1;
     border: 4px solid rgb(98, 85, 237);
   }
 
   50% {
     transform: translateY(500px) rotate(0deg);
-    height: 0px;
-    width: 0px;
-    opacity: 0;
+    height: 200px;
+    width: 200px;
     border: 4px solid rgb(85, 237, 118);
   }
 
   75% {
     transform: translateY(700px) rotate(0deg);
-    height: 100px;
-    width: 100px;
-    opacity: 1;
+    height: 300px;
+    width: 300px;
     border: 4px solid rgb(237, 219, 85);
   }
 
   100% {
     transform: translateY(950px) rotate(0deg);
-    height: 0px;
-    width: 0px;
-    opacity: 0;
+    height: 400px;
+    width: 400px;
     border: 4px solid rgb(237, 126, 85);
   }
 }
