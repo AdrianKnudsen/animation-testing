@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
         function () {
           // to stop the css animation
           this.style.animation = "none";
-          const boxWidth = document.querySelector(".circle-box").offsetWidth;
-          const boxHeight = document.querySelector(".circle-box").offsetHeight;
+          const boxWidth = document.querySelector(".circles li").offsetWidth;
+          const boxHeight = document.querySelector(".circles li").offsetHeight;
 
           const newX = Math.random() * (boxWidth - this.offsetWidth);
           const newY = Math.random() * (boxHeight - this.offsetHeight);
