@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       circle.addEventListener(
         "click",
         function () {
-          // to stop the css animation
+          // stops the css animation
           this.style.animation = "none";
           const boxWidth = document.querySelector(".circles li").offsetWidth;
           const boxHeight = document.querySelector(".circles li").offsetHeight;
