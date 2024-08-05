@@ -9,142 +9,32 @@ body {
   overflow: hidden;
 }
 
-.circle-box {
-  height: 100vh;
-  width: 100%;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-}
-
-.circles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.circles li {
-  position: absolute;
-  display: block;
+li {
   list-style: none;
-  width: 30px;
-  height: 30px;
-  background: transparent;
-  animation: animate 25s linear infinite;
-  border-radius: 100%;
-  border: 4px solid transparent;
-  cursor: pointer;
 }
 
-.circles li:nth-child(1) {
-  left: 2%;
-  width: 80px;
-  height: 80px;
-  animation-delay: 2s;
+.animation-boxes {
+  display: flex;
 }
 
-.circles li:nth-child(2) {
-  left: 12%;
-  width: 80px;
-  height: 80px;
-  animation-delay: 4s;
+.animation-boxes li {
+  background-color: whitesmoke;
+  width: 20px;
+  height: 0px;
+  flex-grow: 1;
 }
 
-.circles li:nth-child(3) {
-  left: 22%;
-  width: 80px;
-  height: 80px;
-  animation-delay: 0s;
+.animation-boxes li.animated {
+  animation: tube 4s ease forwards;
 }
 
-.circles li:nth-child(4) {
-  left: 32%;
-  width: 80px;
-  height: 80px;
-  animation-delay: 1s;
-}
-
-.circles li:nth-child(5) {
-  left: 42%;
-  width: 80px;
-  height: 80px;
-  animation-delay: 8s;
-}
-
-.circles li:nth-child(6) {
-  left: 52%;
-  width: 80px;
-  height: 80px;
-  animation-delay: 3s;
-}
-
-.circles li:nth-child(7) {
-  left: 62%;
-  width: 80px;
-  height: 80px;
-  animation-delay: 1s;
-}
-
-.circles li:nth-child(8) {
-  left: 72%;
-  width: 80px;
-  height: 80px;
-  animation-delay: 7s;
-}
-
-.circles li:nth-child(9) {
-  left: 82%;
-  width: 80px;
-  height: 80px;
-  animation-delay: 11s;
-}
-
-.circles li:nth-child(10) {
-  left: 92%;
-  width: 80px;
-  height: 80px;
-  animation-delay: 0s;
-}
-
-@keyframes animate {
-  0% {
-    transform: translateY(0) rotate(0deg);
+@keyframes tube {
+  from {
     height: 0px;
-    width: 0px;
-    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.351);
   }
-
-  25% {
-    transform: translateY(200px) rotate(0deg);
-    height: 100px;
-    width: 100px;
-    opacity: 1;
-    border: 4px solid rgb(98, 85, 237);
-  }
-
-  50% {
-    transform: translateY(500px) rotate(0deg);
-    height: 0px;
-    width: 0px;
-    opacity: 0;
-    border: 4px solid rgb(85, 237, 118);
-  }
-
-  75% {
-    transform: translateY(700px) rotate(0deg);
-    height: 100px;
-    width: 100px;
-    opacity: 1;
-    border: 4px solid rgb(237, 219, 85);
-  }
-
-  100% {
-    transform: translateY(950px) rotate(0deg);
-    height: 0px;
-    width: 0px;
-    opacity: 0;
-    border: 4px solid rgb(237, 126, 85);
+  to {
+    height: 100lvh;
+    background-color: rgba(245, 245, 245, 0.365);
   }
 }

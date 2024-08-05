@@ -1,27 +1,22 @@
-document.addEventListener("DOMContentLoaded", (event) => {
-  const circles = document.querySelectorAll(".circles li");
+document.addEventListener("DOMContentLoaded", () => {
+  const liElements = document.querySelectorAll(".animation-boxes li");
 
-  setTimeout(() => {
-    circles.forEach((circle) => {
-      circle.addEventListener(
-        "click",
-        function () {
-          // to stop the css animation
-          this.style.animation = "none";
-          const boxWidth = document.querySelector(".circle-box").offsetWidth;
-          const boxHeight = document.querySelector(".circle-box").offsetHeight;
+  function animateRandomElement() {
+    liElements.forEach((el) => el.classList.remove("animated"));
 
-          const newX = Math.random() * (boxWidth - this.offsetWidth);
-          const newY = Math.random() * (boxHeight - this.offsetHeight);
+    const numberOfElementsToAnimate =
+      Math.floor(Math.random() * liElements.length) + 1;
+    const selectedIndices = new Set();
 
-          this.style.transition = "transform 1s ease-in";
-          this.style.transform = `translate(${newX}px, ${newY}px)`;
-          this.style.animation = "";
+    while (selectedIndices.size < numberOfElementsToAnimate) {
+      const randomIndex = Math.floor(Math.random() * liElements.length);
+      selectedIndices.add(randomIndex);
+    }
 
-          this.style.transform = "";
-        },
-        1
-      );
+    selectedIndices.forEach((index) => {
+      liElements[index].classList.add("animated");
     });
-  });
+  }
+
+  setInterval(animateRandomElement, 3800);
 });
